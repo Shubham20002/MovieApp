@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.main{
+   margin-top: 15px;
+}
+.movie-card{
+    position: relative;
+    width: 60%;
+    height: 180px;
+    display: flex;
+    background-color: aliceblue;
+    margin-left: 20%;
+    
+   
+}
+.left{
+    width: 20%;
+
+}
+.right{
+    margin-left: 25px;
+    width: 80%;
+   
+}
+.heading{
+    margin-top: 10px;
+}
+.plot{
+    margin-top: 30px;
+}
+.price{
+    margin-top: 7px;
+}
+.footer{
+    
+    position: absolute;
+    top:140px ;
+    display: flex;
+    width: 80%;
+}
+.rating{
+    
+}
+.star{
+    margin-left: 200px;
+}
+.starimg{
+    width: 20px;
+    height: 20px;
+}
+.stardec{
+    width: 15px;
+    height: 15px;
+}
+.starinc{
+    width: 15px;
+    height: 15px;
+}
+.btnbox{
+  margin-left: 180px;
+}
+button{
+width: 120px;
+height: 28px;
+/* border-radius: 10px; */
+margin-left: 10px;
+background-color: red;
+color: white;
+}
+button:nth-child(even){
+    background-color: blue;
+}
