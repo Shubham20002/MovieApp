@@ -2,11 +2,23 @@ import React from "react";
 import './Moviecard.css';
 class Moviecard extends React.Component {
 
+    constructor(){
+        super();
+        this.state={
+            title:"Pathan",
+            plot:"hi this is pathan movie by srk",
+            price:500,
+            rating:1.3
+        }
+    }
+
     addstar(){
         console.log('star added')
     }
 
     render() {
+        //destuctur the object
+        const {title,plot,price,rating}=this.state;
         return (
             <div className="main">
                 <div className="movie-card">
@@ -15,18 +27,18 @@ class Moviecard extends React.Component {
                     </div>
                     <div className="right">
                         <div className="heading">
-                            <h3>Pathan</h3>
+                            <h3>{this.state.title}</h3>
                         </div>
                         <div className="plot">
-                            <p>super movie</p>
+                            <p>{plot}</p>
                         </div>
                         <div className="price">
-                            <h5>Rs 150.00</h5>
+                            <h5>{price}</h5>
                         </div>
 
                         <div className="footer">
                             <div className="rating">
-                                <h4>3</h4>
+                                <h4>{rating}</h4>
                             </div>
                             <div className="star">
                                <img className="stardec" src="https://cdn-icons-png.flaticon.com/128/43/43625.png" alt="" />
