@@ -1,24 +1,49 @@
 import React from "react";
 import './Moviecard.css';
 class Moviecard extends React.Component {
-
+    
+        
     constructor(){
+        
         super();
+        //here we are setting state object values in constructor function because constructor is called when 
+        // object of Moviecard created.and that object is created when Moviecard is called in app.js
         this.state={
             title:"Pathan",
             plot:"hi this is pathan movie by srk",
             price:500,
-            rating:1.3
+            rating:1.3,
+            stars:0,
+            fav:true
         }
     }
 
-    addstar(){
-        console.log('star added')
+    addstar=()=>{
+        // console.log("this state:"+this);
+        // this.setState({
+        //     stars:this.state.stars +0.5
+        // })
+        if(this.state.stars>=5){
+            return;
+        }
+        this.setState((prevState)=>({stars:prevState.stars+.5}))
+    }
+    removestar=()=>{
+        if(this.state.stars<=0){
+            return;
+        }
+        this.setState((prevState)=>({stars:prevState.stars-0.5}))
+    }
+
+    handlefav=()=>{
+     this.setState({
+        fav:!this.state.fav
+     })
     }
 
     render() {
-        //destuctur the object
-        const {title,plot,price,rating}=this.state;
+        //destructure the object
+        const {title,plot,price,rating,stars,fav}=this.state;
         return (
             <div className="main">
                 <div className="movie-card">
@@ -41,14 +66,21 @@ class Moviecard extends React.Component {
                                 <h4>{rating}</h4>
                             </div>
                             <div className="star">
-                               <img className="stardec" src="https://cdn-icons-png.flaticon.com/128/43/43625.png" alt="" />
-                               <img className="starimg" src="https://cdn-icons-png.flaticon.com/128/1828/1828884.png" alt="" />
-                               <img className="starinc" src="https://cdn-icons-png.flaticon.com/128/3524/3524388.png" alt="" onClick={this.addstar}/>
-                               <span>0</span>
+                               <img className="stardec"
+                                src="https://cdn-icons-png.flaticon.com/128/43/43625.png"
+                                 alt="" onClick={this.removestar}/>
+
+                               <img className="starimg"
+                                src="https://cdn-icons-png.flaticon.com/128/1828/1828884.png" alt="" />
+                                
+                               <img className="starinc" 
+                               src="https://cdn-icons-png.flaticon.com/128/3524/3524388.png" alt="" onClick={this.addstar}/>
+                               <span>{stars}</span>
                             </div>
                             <div className="btnbox">
-                                <button >Fav</button>
-                                <button >buy</button>
+                                {fav? <button className="unfav-button" onClick={this.handlefav}>UnFav</button>:
+                                <button className="fav-button"onClick={this.handlefav}>Fav</button>}
+                                <button className="buy-button">Add To Cart</button>
                             </div>
 
                         </div>

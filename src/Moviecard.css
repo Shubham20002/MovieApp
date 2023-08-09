@@ -1,16 +1,21 @@
 *{
     margin: 0;
     padding: 0;
+   
+}
+body{
+    background-color: rgb(206, 219, 210);
 }
 .main{
    margin-top: 15px;
+ 
 }
 .movie-card{
     position: relative;
     width: 60%;
     height: 180px;
     display: flex;
-    background-color: aliceblue;
+    background-color: white;
     margin-left: 20%;
     
    
@@ -22,51 +27,64 @@
 .right{
     margin-left: 25px;
     width: 80%;
+    
    
 }
 .heading{
     margin-top: 10px;
 }
 .plot{
-    margin-top: 30px;
+    margin-top: 10px;
 }
 .price{
     margin-top: 7px;
 }
+
 .footer{
     
     position: absolute;
     top:140px ;
     display: flex;
-    width: 80%;
+    width: 70%;
+    justify-content: space-between;
 }
 
 .star{
-    margin-left: 200px;
+    margin-left: 100px;
 }
 .starimg{
     width: 20px;
     height: 20px;
 }
 .stardec{
-    width: 15px;
-    height: 15px;
+    width: 12px;
+    height: 12px;
 }
 .starinc{
-    width: 15px;
-    height: 15px;
+    width: 12px;
+    height: 12px;
 }
 .btnbox{
-  margin-left: 180px;
+  margin-left: 170px;
 }
-button{
+.fav-button{
 width: 120px;
 height: 28px;
-/* border-radius: 10px; */
+margin-left: 10px;
+background-color:purple;
+color: white;
+}
+.unfav-button{
+    width: 120px;
+height: 28px;
 margin-left: 10px;
 background-color: red;
 color: white;
 }
-button:nth-child(even){
-    background-color: blue;
+.buy-button{
+    width: 120px;
+height: 28px;
+margin-left: 10px;
+background-color: blue;
+color: white;
 }
